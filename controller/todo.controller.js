@@ -1,4 +1,5 @@
 const asyncHandler=require("express-async-handler")
+const Todo = require("../models/Todo")
 
 exports.CreateTodo=asyncHandler(async (req, res)=>{
 
@@ -6,7 +7,7 @@ exports.CreateTodo=asyncHandler(async (req, res)=>{
 })
 
 exports.GetTodo=asyncHandler(async (req, res)=>{
-
+    const result = await Todo.find()
     res.json({message:"TODO FETCH SUCCESS", result})
 })
 
