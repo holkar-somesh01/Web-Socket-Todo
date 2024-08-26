@@ -7,7 +7,7 @@ exports.CreateTodo=asyncHandler(async (req, res)=>{
 
 exports.GetTodo=asyncHandler(async (req, res)=>{
 
-    res.json({message:"TODO FETCH SUCCESS"})
+    res.json({message:"TODO FETCH SUCCESS", result})
 })
 
 exports.UpdateTodo=asyncHandler(async (req, res)=>{
