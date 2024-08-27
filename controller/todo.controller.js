@@ -13,6 +13,7 @@ exports.GetTodo=asyncHandler(async (req, res)=>{
 
 exports.UpdateTodo=asyncHandler(async (req, res)=>{
     await Todo.findByIdAndUpdate(req.params.id, req.body)
+    // res.json({message:"TODO UPDATE SUCCESS"})
     res.json({message:"TODO UPDATE SUCCESS"})
 })
 
