@@ -15,7 +15,7 @@ exports.GetTodo = asyncHandler(async (req, res) => {
 })
 
 exports.UpdateTodo = asyncHandler(async (req, res) => {
-    await Todo.findByIdAndUpdate(req.params.id, req.body)
+    await Todo.findByIdAndUpdate(req.params.id, {...req.body,complete:true})
     const result = await Todo.find()
     IO.emit("todo-create", result) 
     res.json({message:"TODO UPDATE SUCCESS"})
