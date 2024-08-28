@@ -14,8 +14,8 @@ app.use(cors({origin:true,credentials:true}))
 app.use("/api/notes",require("./routes/todo.routes"))
 
 app.use("*",( req, res )=>{
-    // res.send(path.join(__dirname,"dist","index.html"))
-    res.status(404).json({message:"Resource Not Found"})
+    res.sendFile(path.join(__dirname, "dist", "index.html" ))
+    // res.status(404).json({message:"Resource Not Found"})
 })
 app.use((err, req, res,next)=>{
     console.log(err)
